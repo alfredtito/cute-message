@@ -23,7 +23,7 @@
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       text-align: center;
-      max-width: 300px;
+      max-width: 320px;
       animation: popin 0.8s ease-out forwards;
     }
 
@@ -36,6 +36,16 @@
     p {
       font-size: 18px;
       color: #555;
+      margin-bottom: 15px;
+    }
+
+    img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
     }
 
     @keyframes popin {
@@ -98,31 +108,30 @@
     }
 
     audio {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-      z-index: 100;
+      margin-top: 10px;
+      width: 90%;
     }
   </style>
 </head>
 <body>
   <div class="message-box">
     <h1>Hey you! 😊</h1>
-    <p>You're amazing and deserve all the good things! I'm happy to have you as a girlfriend..Happy girlfriend Day 💖</p>
-   <p>I love you!!💖</p>
+    <p>You're amazing and deserve all the good things!<br>
+       I'm happy to have you as my girlfriend. 💖</p>
+    <p>Happy Girlfriend Day! I love you!! 💕</p>
+    <img src="sesha.jpg" alt="Her Cute Photo" />
+
+    <!-- 🎵 Audio Player (User can click play) -->
+    <audio controls>
+      <source src="angel.mp3" type="audio/mpeg">
+      Your browser does not support the audio tag.
+    </audio>
   </div>
 
   <div class="hearts"></div>
 
-  <!-- 🎵 Audio Player -->
-  <audio autoplay loop controls>
-    <source src="angel.mp3" type="audio/mpeg">
-    Your browser does not support the audio tag.
-  </audio>
-
   <script>
     const heartsContainer = document.querySelector('.hearts');
-
     for (let i = 0; i < 30; i++) {
       const heart = document.createElement('div');
       heart.classList.add('heart');
