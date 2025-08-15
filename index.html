@@ -3,62 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy 3 Months Anniversary!😊</title>
+  <title>Happy 3 Months Anniversary! 💖</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-family: 'Poppins', sans-serif;
       overflow: hidden;
     }
 
     .message-box {
-      background: white;
-      padding: 30px 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.95);
+      padding: 35px 45px;
+      border-radius: 25px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
       text-align: center;
-      max-width: 320px;
-      animation: popin 0.8s ease-out forwards;
+      max-width: 340px;
+      animation: fadeSlideIn 1s ease-out forwards;
     }
 
     h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: #ff69b4;
+      font-size: 26px;
+      margin-bottom: 12px;
+      color: #ff4081;
     }
 
     p {
-      font-size: 18px;
-      color: #555;
-      margin-bottom: 15px;
+      font-size: 17px;
+      color: #444;
+      margin-bottom: 20px;
+      line-height: 1.4;
     }
 
-.card {
-  max-width: 90%;
-  margin: auto;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  background: #fff;
-  border-radius: 12px;
-  text-align: center;
-}
-    @keyframes popin {
+    audio {
+      margin-top: 15px;
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    /* Animation for box entrance */
+    @keyframes fadeSlideIn {
       from {
-        transform: scale(0);
         opacity: 0;
+        transform: translateY(30px);
       }
       to {
-        transform: scale(1);
         opacity: 1;
+        transform: translateY(0);
       }
     }
 
+    /* Hearts background */
     .hearts {
       position: absolute;
       width: 100%;
@@ -69,57 +69,61 @@
 
     .heart {
       position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: #ff69b4;
+      width: 18px;
+      height: 18px;
+      background-color: #ff4081;
       transform: rotate(45deg);
-      animation: float 8s infinite ease-in;
+      animation: floatUp 6s infinite ease-in-out;
+      opacity: 0.8;
     }
 
     .heart::before,
     .heart::after {
       content: '';
       position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: #ff69b4;
+      width: 18px;
+      height: 18px;
+      background-color: #ff4081;
       border-radius: 50%;
     }
 
     .heart::before {
-      top: -10px;
+      top: -9px;
       left: 0;
     }
 
     .heart::after {
-      left: -10px;
+      left: -9px;
       top: 0;
     }
 
-    @keyframes float {
+    @keyframes floatUp {
       0% {
-        transform: translateY(100vh) rotate(45deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) rotate(45deg);
+        transform: translateY(100vh) rotate(45deg) scale(1);
         opacity: 0;
       }
-    }
-
-    audio {
-      margin-top: 10px;
-      width: 90%;
+      20% {
+        opacity: 0.8;
+      }
+      50% {
+        transform: translateY(50vh) rotate(45deg) scale(1.2);
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg) scale(1);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
   <div class="message-box">
-    <h1>Heyy Lilo.❤️</h1>
-    <p>"Happy 3 months anniversary, babe.❤️
-You’re still my favorite notification, my best distraction, and the reason I smile for no reason 😏. It feels like I’ve known you forever, they way I get horny just thinking about you!
-    I love you soo much.❤️❤️❤️</p>
-    <!-- 🎵 Audio Player (User can click play) -->
+    <h1>Heyy Lilo ❤️</h1>
+    <p>
+      "Happy 3 months anniversary, babe. ❤️  
+      You’re still my favorite notification, my best distraction, and the reason I smile for no reason 😏.  
+      It feels like I’ve known you forever, the way I get horny just thinking about you!  
+      I love you soo much. ❤️❤️❤️"
+    </p>
     <audio controls>
       <source src="Alex Warren-Ordinary.mp3" type="audio/mpeg">
       Your browser does not support the audio tag.
@@ -130,11 +134,12 @@ You’re still my favorite notification, my best distraction, and the reason I s
 
   <script>
     const heartsContainer = document.querySelector('.hearts');
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 25; i++) {
       const heart = document.createElement('div');
       heart.classList.add('heart');
       heart.style.left = `${Math.random() * 100}%`;
-      heart.style.animationDelay = `${Math.random() * 8}s`;
+      heart.style.animationDelay = `${Math.random() * 5}s`;
+      heart.style.backgroundColor = Math.random() > 0.5 ? '#ff4081' : '#ff80ab';
       heartsContainer.appendChild(heart);
     }
   </script>
